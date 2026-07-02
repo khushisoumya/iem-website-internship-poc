@@ -53,8 +53,6 @@ export default function DepartmentLayout({
             Home &gt; Academics &gt; Departments &amp; Programmes &gt; {title}
           </p>
 
-          <p className="text-xl font-semibold text-white/90 mb-3">{heroLabel}</p>
-
           <h1 className="text-5xl font-bold mb-5 text-white">{heroTitle}</h1>
 
           <p className="text-xl text-gray-200 mb-5">
@@ -63,7 +61,7 @@ export default function DepartmentLayout({
 
           <div className="w-16 h-1 bg-yellow-400 mb-6"></div>
 
-          <p className="max-w-xl leading-8 text-gray-200 mb-8">{heroSummary}</p>
+          <p className="max-w-xl leading-80 text-gray-200 mb-8">{heroSummary}</p>
 
           <div className="flex gap-4">
             <button className="bg-blue-600 hover:bg-blue-700 px-7 py-3 rounded-lg font-medium">

@@ -205,11 +205,6 @@ The website is fully responsive and optimized for:
 
 ---
 
-## 📄 License
-
-This project was developed as a modern digital experience initiative and institutional website redesign for educational and demonstration purposes.
-
----
 
 # Where Innovation Meets Excellence.
 

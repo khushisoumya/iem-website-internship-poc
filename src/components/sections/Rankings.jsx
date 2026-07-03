@@ -289,7 +289,7 @@ export default function Rankings() {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="max-h-14 max-w-full object-contain opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                  className="max-h-14 max-w-full object-contain opacity-100  transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
                 />
               </Reveal>
             ))}

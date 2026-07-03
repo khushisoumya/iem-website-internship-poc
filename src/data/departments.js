@@ -21,7 +21,7 @@ const defaultStats = [
 const defaultFaculty = {
   title: 'Our Faculty',
   description:
-    'Learn from experienced academicians and industry practitioners committed to mentoring the next generation of engineers.',
+    'Learn from experienced academicians and industry practitioners committed to mentoring the next generation of professionals.',
   members: [
     { name: 'Prof. (Dr.) A. Sen', role: 'Head of Department' },
     { name: 'Prof. (Dr.) R. Roy', role: 'Professor' },
@@ -43,11 +43,22 @@ const defaultFacilities = {
   ],
 }
 
+// The order in which sections are shown on the Academics listing page.
+export const sectionOrder = [
+  'Engineering',
+  'Management',
+  'Computer Applications',
+  'Law',
+  'Hotel Management',
+  'Basic Sciences & Humanities',
+]
+
 // Builds a full department object from the fields unique to each department,
 // filling in the shared defaults above.
 function makeDept({
   slug,
   title,
+  section = 'Engineering',
   heroLabel = 'Institute of Engineering & Management',
   tagline,
   heroSummary,
@@ -64,6 +75,7 @@ function makeDept({
   return {
     slug,
     title,
+    section,
     heroLabel,
     heroTitle: title,
     tagline,
@@ -92,10 +104,11 @@ function makeDept({
 }
 
 export const departments = {
+  // ─────────────────────────────── Engineering ───────────────────────────────
   cse: makeDept({
     slug: 'cse',
     title: 'Computer Science & Engineering',
-    tagline: 'Building the architects of tomorrow’s technology.',
+    tagline: 'Building strong foundations in software, systems and intelligent computing.',
     heroSummary:
       'A flagship department offering rigorous training in computing fundamentals, systems, and modern software engineering, backed by strong research and placements.',
     description:
@@ -125,8 +138,8 @@ export const departments = {
 
   'cse-ai-ml': makeDept({
     slug: 'cse-ai-ml',
-    title: 'CSE (AI & Machine Learning)',
-    tagline: 'Engineering intelligence into everything.',
+    title: 'CSE (Artificial Intelligence & Machine Learning)',
+    tagline: 'Developing software engineers for AI, machine learning and intelligent products.',
     heroSummary:
       'A specialised programme focused on deep learning, neural networks and predictive modelling, with strong mathematical and computing foundations.',
     description:
@@ -154,10 +167,41 @@ export const departments = {
     programs: ['B.Tech in CSE (AI & ML)', 'M.Tech in AI', 'Ph.D in Machine Learning'],
   }),
 
+  'cse-ai-data-science': makeDept({
+    slug: 'cse-ai-data-science',
+    title: 'CSE (Artificial Intelligence & Data Science)',
+    tagline: 'Blending AI, analytics and computing for next-generation intelligent systems.',
+    heroSummary:
+      'A programme uniting artificial intelligence with large-scale data analytics to build insight-driven, intelligent systems.',
+    description:
+      'This specialisation fuses core computer science, artificial intelligence and data science, preparing students to build intelligent systems that learn from data at scale.',
+    aboutDescription:
+      'The curriculum combines machine learning, statistics and data engineering with strong software foundations and applied capstone projects.',
+    points: [
+      'Applied AI backed by large-scale data analytics',
+      'Statistics, data engineering and modelling',
+      'End-to-end machine learning projects',
+      'Industry-relevant tooling and MLOps',
+    ],
+    vision:
+      'To produce engineers who transform data into intelligent, real-world impact.',
+    focusAreas: [
+      { title: 'Data-Driven AI', description: 'Learning systems built on large, real-world datasets.' },
+      { title: 'Big Data Analytics', description: 'Pipelines, warehousing and distributed processing.' },
+      { title: 'Applied Machine Learning', description: 'Modelling, evaluation and deployment.' },
+    ],
+    labs: [
+      { title: 'AI & Data Lab', description: 'GPU compute for AI and data workloads.' },
+      { title: 'Analytics Lab', description: 'Environments for statistical computing.' },
+      { title: 'Visualisation Studio', description: 'Interactive dashboards and reporting.' },
+    ],
+    programs: ['B.Tech in CSE (AI & Data Science)', 'M.Tech in Data Science'],
+  }),
+
   'cse-data-science': makeDept({
     slug: 'cse-data-science',
     title: 'CSE (Data Science)',
-    tagline: 'Turning data into decisions.',
+    tagline: 'Applying data, algorithms and computing to build insight-driven systems.',
     heroSummary:
       'A programme built around statistics, big-data pipelines and data-driven decision making across industries.',
     description:
@@ -188,7 +232,7 @@ export const departments = {
   'cse-ai': makeDept({
     slug: 'cse-ai',
     title: 'CSE (Artificial Intelligence)',
-    tagline: 'Reasoning, learning and intelligent systems.',
+    tagline: 'Training intelligent computing engineers for machine learning and automation.',
     heroSummary:
       'A specialisation exploring intelligent systems, reasoning and applied machine learning across domains.',
     description:
@@ -219,7 +263,7 @@ export const departments = {
   'cse-cyber-security': makeDept({
     slug: 'cse-cyber-security',
     title: 'CSE (Cyber Security)',
-    tagline: 'Defending the digital world.',
+    tagline: 'Building secure computing systems, digital defence and resilient software platforms.',
     heroSummary:
       'A specialisation in network defence, ethical hacking and secure systems engineering.',
     description:
@@ -247,10 +291,72 @@ export const departments = {
     programs: ['B.Tech in CSE (Cyber Security)', 'M.Tech in Cyber Security'],
   }),
 
+  'cse-iot': makeDept({
+    slug: 'cse-iot',
+    title: 'CSE (Internet of Things)',
+    tagline: 'Designing smart products through software, sensing and connected computing.',
+    heroSummary:
+      'A specialisation in embedded systems, sensor networks and edge computing that power the connected world.',
+    description:
+      'The Internet of Things specialisation trains students to design smart, connected products spanning hardware, software and cloud.',
+    aboutDescription:
+      'Students learn embedded programming, sensor integration, wireless networking and edge/cloud computing through hands-on projects.',
+    points: [
+      'Embedded systems and microcontrollers',
+      'Sensor networks and wireless communication',
+      'Edge and cloud integration',
+      'Smart, connected product development',
+    ],
+    vision:
+      'To build engineers who connect the physical and digital worlds intelligently.',
+    focusAreas: [
+      { title: 'Embedded Systems', description: 'Microcontrollers and real-time firmware.' },
+      { title: 'Sensor Networks', description: 'Distributed sensing and communication.' },
+      { title: 'Edge Computing', description: 'Processing at the edge, integrated with the cloud.' },
+    ],
+    labs: [
+      { title: 'IoT Lab', description: 'Development kits, sensors and connectivity modules.' },
+      { title: 'Embedded Systems Lab', description: 'Boards and tooling for firmware development.' },
+      { title: 'Networks Lab', description: 'Infrastructure for wireless and edge networking.' },
+    ],
+    programs: ['B.Tech in CSE (IoT)'],
+  }),
+
+  'cse-iot-cs-blockchain': makeDept({
+    slug: 'cse-iot-cs-blockchain',
+    title: 'CSE (IoT & Cyber Security incl. Blockchain)',
+    tagline: 'Combining connected systems, security and blockchain-enabled digital trust.',
+    heroSummary:
+      'A programme uniting the Internet of Things, cyber security and blockchain to build secure, decentralised connected systems.',
+    description:
+      'This specialisation combines IoT engineering with cyber security and blockchain, preparing students to build secure and trustworthy connected systems.',
+    aboutDescription:
+      'The curriculum spans embedded and connected systems, security engineering and distributed-ledger / blockchain technology.',
+    points: [
+      'Secure IoT and embedded systems',
+      'Network and application security',
+      'Blockchain and distributed ledgers',
+      'Decentralised, trust-based applications',
+    ],
+    vision:
+      'To engineer secure, decentralised and trustworthy connected systems.',
+    focusAreas: [
+      { title: 'IoT Security', description: 'Securing connected devices end to end.' },
+      { title: 'Blockchain', description: 'Distributed ledgers, smart contracts and dApps.' },
+      { title: 'Distributed Trust', description: 'Cryptographic trust across systems.' },
+    ],
+    labs: [
+      { title: 'IoT & Security Lab', description: 'Connected devices with a security focus.' },
+      { title: 'Blockchain Lab', description: 'Environments for distributed-ledger development.' },
+      { title: 'Cyber Range', description: 'Isolated environment for security practice.' },
+    ],
+    programs: ['B.Tech in CSE (IoT & Cyber Security incl. Blockchain Technology)'],
+  }),
+
   it: makeDept({
     slug: 'it',
     title: 'Information Technology',
-    tagline: 'Connecting enterprise, software and systems.',
+    tagline: 'Building reliable digital systems, enterprise platforms and networked solutions.',
     heroSummary:
       'A programme spanning enterprise software, networks and information systems that power modern organisations.',
     description:
@@ -280,8 +386,8 @@ export const departments = {
 
   ece: makeDept({
     slug: 'ece',
-    title: 'Electronics & Communication Engineering',
-    tagline: 'From signals to systems.',
+    title: 'Electronics & Communications Engineering',
+    tagline: 'Enabling digital connectivity through electronics, signals and communication networks.',
     heroSummary:
       'A department covering communication systems, VLSI and embedded electronics that shape the connected world.',
     description:
@@ -312,7 +418,7 @@ export const departments = {
   ee: makeDept({
     slug: 'ee',
     title: 'Electrical Engineering',
-    tagline: 'Powering the world responsibly.',
+    tagline: 'Powering modern infrastructure through energy systems and electrical design.',
     heroSummary:
       'A department focused on power systems, control engineering and electrical machines.',
     description:
@@ -340,10 +446,41 @@ export const departments = {
     programs: ['B.Tech in Electrical Engineering', 'M.Tech in Power Systems'],
   }),
 
+  eee: makeDept({
+    slug: 'eee',
+    title: 'Electrical & Electronics Engineering',
+    tagline: 'Combining energy systems with electronics and intelligent control.',
+    heroSummary:
+      'A department bridging electrical power engineering with modern electronics and intelligent control systems.',
+    description:
+      'The Department of Electrical & Electronics Engineering blends power engineering with electronics, control and embedded systems.',
+    aboutDescription:
+      'Students study power electronics, electrical machines, control systems and electronics with a strong practical, lab-driven approach.',
+    points: [
+      'Power electronics and electrical machines',
+      'Control and automation systems',
+      'Electronics and embedded integration',
+      'Renewable energy and smart systems',
+    ],
+    vision:
+      'To develop engineers who integrate power and electronics for a smarter, sustainable future.',
+    focusAreas: [
+      { title: 'Power Electronics', description: 'Converters, drives and power conditioning.' },
+      { title: 'Control Systems', description: 'Automation and intelligent control.' },
+      { title: 'Renewable Energy', description: 'Solar, wind and smart-grid integration.' },
+    ],
+    labs: [
+      { title: 'Power Electronics Lab', description: 'Converters, drives and power systems.' },
+      { title: 'Machines Lab', description: 'Electrical machines and instrumentation.' },
+      { title: 'Control Lab', description: 'Control and automation experiments.' },
+    ],
+    programs: ['B.Tech in Electrical & Electronics Engineering'],
+  }),
+
   mechanical: makeDept({
     slug: 'mechanical',
     title: 'Mechanical Engineering',
-    tagline: 'Designing, building and moving the world.',
+    tagline: 'Designing, analysing and building the systems that power industry.',
     heroSummary:
       'A department covering design, thermal sciences, manufacturing and modern mechatronics.',
     description:
@@ -374,7 +511,7 @@ export const departments = {
   biotechnology: makeDept({
     slug: 'biotechnology',
     title: 'Biotechnology',
-    tagline: 'Engineering life sciences for a better future.',
+    tagline: 'Harnessing biological systems for healthcare, research and industrial innovation.',
     heroSummary:
       'A department bridging biology and engineering — genetics, bioprocess engineering and life sciences.',
     description:
@@ -401,6 +538,235 @@ export const departments = {
     ],
     programs: ['B.Tech in Biotechnology', 'M.Tech in Biotechnology'],
   }),
+
+  // ─────────────────────────────── Management ────────────────────────────────
+  mba: makeDept({
+    slug: 'mba',
+    title: 'Master of Business Administration (MBA)',
+    section: 'Management',
+    tagline: 'Developing strategic leaders for business, entrepreneurship and global enterprises.',
+    heroSummary:
+      'A rigorous management programme building strategic leaders across finance, marketing, operations and analytics.',
+    description:
+      'The MBA programme develops well-rounded managers and entrepreneurs through a blend of management theory, analytics and real-world practice.',
+    aboutDescription:
+      'Students build expertise across finance, marketing, operations and human resources, supported by live projects, case studies and industry mentorship.',
+    points: [
+      'Finance, marketing, operations and HR',
+      'Data-driven, analytics-led decision making',
+      'Live projects and industry mentorship',
+      'Leadership, strategy and entrepreneurship',
+    ],
+    vision:
+      'To develop ethical, analytical leaders who create value for organisations and society.',
+    focusAreas: [
+      { title: 'Finance & Analytics', description: 'Corporate finance, investments and business analytics.' },
+      { title: 'Marketing & Strategy', description: 'Brand, digital marketing and strategic management.' },
+      { title: 'Operations & HR', description: 'Operations, supply chain and people management.' },
+    ],
+    labs: [
+      { title: 'Analytics & Finance Lab', description: 'Tools for financial modelling and analytics.' },
+      { title: 'Behavioural Research Lab', description: 'Space for consumer and organisational research.' },
+      { title: 'Simulation Lab', description: 'Business simulation and strategy games.' },
+    ],
+    programs: ['MBA (Master of Business Administration)'],
+  }),
+
+  bba: makeDept({
+    slug: 'bba',
+    title: 'Bachelor of Business Administration (BBA)',
+    section: 'Management',
+    tagline: 'Creating business-ready graduates with strong management and communication skills.',
+    heroSummary:
+      'An undergraduate management programme building strong business fundamentals and a managerial mindset.',
+    description:
+      'The BBA programme lays a strong foundation in business management, communication and analytical thinking for future managers and entrepreneurs.',
+    aboutDescription:
+      'Students learn the fundamentals of management, finance, marketing and communication, with practical exposure through projects and internships.',
+    points: [
+      'Core management and business fundamentals',
+      'Communication and presentation skills',
+      'Entrepreneurship and problem solving',
+      'Internships and industry exposure',
+    ],
+    vision:
+      'To nurture confident, business-ready graduates with a strong ethical foundation.',
+    focusAreas: [
+      { title: 'Management Fundamentals', description: 'Principles of management and organisation.' },
+      { title: 'Entrepreneurship', description: 'Venture creation and business planning.' },
+      { title: 'Business Communication', description: 'Professional communication and soft skills.' },
+    ],
+    labs: [
+      { title: 'Business Analytics Lab', description: 'Tools for spreadsheets and analytics.' },
+      { title: 'Communication Lab', description: 'Space for presentations and group work.' },
+      { title: 'Case-Study Studio', description: 'Collaborative learning environments.' },
+    ],
+    programs: ['BBA (Bachelor of Business Administration)'],
+  }),
+
+  // ─────────────────────────── Computer Applications ─────────────────────────
+  mca: makeDept({
+    slug: 'mca',
+    title: 'Master in Computer Applications (MCA)',
+    section: 'Computer Applications',
+    tagline: 'Advancing application development, systems design and software engineering capability.',
+    heroSummary:
+      'A postgraduate programme advancing software engineering, systems design and emerging computing technologies.',
+    description:
+      'The MCA programme deepens students’ software engineering, systems and computing expertise, preparing them for advanced roles in the IT industry.',
+    aboutDescription:
+      'The curriculum covers software engineering, data and systems, and emerging technologies, backed by substantial project work.',
+    points: [
+      'Advanced software engineering',
+      'Data structures, databases and systems',
+      'Emerging technologies and cloud',
+      'Capstone and industry projects',
+    ],
+    vision:
+      'To produce highly capable software professionals for a rapidly evolving industry.',
+    focusAreas: [
+      { title: 'Software Engineering', description: 'Design and delivery of robust software.' },
+      { title: 'Data & Systems', description: 'Databases, systems and distributed computing.' },
+      { title: 'Emerging Technologies', description: 'Cloud, AI and modern application stacks.' },
+    ],
+    labs: [
+      { title: 'Software Development Lab', description: 'Workstations for full-stack development.' },
+      { title: 'Computing Lab', description: 'Environments for systems and data work.' },
+      { title: 'Project & Innovation Lab', description: 'Space for capstone and research projects.' },
+    ],
+    programs: ['MCA (Master in Computer Applications)'],
+  }),
+
+  bca: makeDept({
+    slug: 'bca',
+    title: 'Bachelor of Computer Applications (BCA)',
+    section: 'Computer Applications',
+    tagline: 'Building software application skills through programming, databases and digital systems.',
+    heroSummary:
+      'An undergraduate programme building strong software application skills across programming, web and databases.',
+    description:
+      'The BCA programme builds practical software development skills through programming, web technologies, databases and digital systems.',
+    aboutDescription:
+      'Students gain hands-on experience across programming languages, web and application development and database systems.',
+    points: [
+      'Programming and problem solving',
+      'Web and application development',
+      'Databases and digital systems',
+      'Project-based, practical learning',
+    ],
+    vision:
+      'To create job-ready application developers with strong fundamentals.',
+    focusAreas: [
+      { title: 'Programming & Databases', description: 'Core programming and data management.' },
+      { title: 'Web & App Development', description: 'Building modern web and mobile applications.' },
+      { title: 'Digital Systems', description: 'Foundations of computing and systems.' },
+    ],
+    labs: [
+      { title: 'Programming Lab', description: 'Workstations for coding and development.' },
+      { title: 'Web Technologies Lab', description: 'Environments for web and app development.' },
+      { title: 'Project Lab', description: 'Space for application projects.' },
+    ],
+    programs: ['BCA (Bachelor of Computer Applications)'],
+  }),
+
+  // ─────────────────────────────────── Law ───────────────────────────────────
+  law: makeDept({
+    slug: 'law',
+    title: 'Law',
+    section: 'Law',
+    tagline: 'Preparing legal professionals with analytical thinking, ethics and advocacy skills.',
+    heroSummary:
+      'A programme shaping legal minds through constitutional, corporate and criminal law with strong advocacy training.',
+    description:
+      'The School of Law prepares students for the legal profession through rigorous academics, moot courts and practical training.',
+    aboutDescription:
+      'Students study constitutional, corporate, criminal and commercial law, developing analytical thinking, ethics and advocacy skills.',
+    points: [
+      'Constitutional, corporate and criminal law',
+      'Moot courts and advocacy training',
+      'Legal research and writing',
+      'Ethics and professional practice',
+    ],
+    vision:
+      'To shape principled legal professionals committed to justice.',
+    focusAreas: [
+      { title: 'Constitutional & Criminal Law', description: 'Foundations of rights and criminal justice.' },
+      { title: 'Corporate & Commercial Law', description: 'Business, corporate and commercial practice.' },
+      { title: 'Advocacy & Ethics', description: 'Courtroom skills and professional ethics.' },
+    ],
+    labs: [
+      { title: 'Moot Court Hall', description: 'Simulated courtroom for advocacy practice.' },
+      { title: 'Legal Aid Clinic', description: 'Community legal aid and practical exposure.' },
+      { title: 'Legal Research Lab', description: 'Databases and resources for legal research.' },
+    ],
+    programs: ['LL.B (Bachelor of Laws)', 'BA LL.B (Hons.)'],
+  }),
+
+  // ────────────────────────────── Hotel Management ───────────────────────────
+  bhm: makeDept({
+    slug: 'bhm',
+    title: 'BHM (Bachelor of Hotel Management)',
+    section: 'Hotel Management',
+    tagline: 'Preparing hospitality professionals for service excellence and operational leadership.',
+    heroSummary:
+      'A programme building hospitality excellence through culinary arts, front-office and food & beverage management.',
+    description:
+      'The Bachelor of Hotel Management programme trains students for leadership roles across the hospitality and service industry.',
+    aboutDescription:
+      'Students gain hands-on experience in culinary arts, front office, housekeeping and food & beverage operations, supported by industry internships.',
+    points: [
+      'Culinary arts and food production',
+      'Front office and housekeeping operations',
+      'Food & beverage service and management',
+      'Industry internships and exposure',
+    ],
+    vision:
+      'To develop hospitality leaders known for service excellence.',
+    focusAreas: [
+      { title: 'Culinary Arts', description: 'Food production and kitchen operations.' },
+      { title: 'Front Office & Housekeeping', description: 'Guest services and accommodation operations.' },
+      { title: 'Food & Beverage Management', description: 'Service, planning and operations.' },
+    ],
+    labs: [
+      { title: 'Training Kitchen', description: 'Professional kitchen for culinary training.' },
+      { title: 'Front Office Lab', description: 'Simulated hotel front-office operations.' },
+      { title: 'Bakery & Confectionery Lab', description: 'Baking and pastry production.' },
+    ],
+    programs: ['BHM (Bachelor of Hotel Management)'],
+  }),
+
+  // ────────────────────────── Basic Sciences & Humanities ────────────────────
+  bsh: makeDept({
+    slug: 'bsh',
+    title: 'BSH (Basic Science & Humanities)',
+    section: 'Basic Sciences & Humanities',
+    tagline: 'Strengthening scientific foundations, communication and human-centred thinking.',
+    heroSummary:
+      'The foundational department strengthening science, mathematics and communication across all programmes.',
+    description:
+      'The Department of Basic Science & Humanities builds the scientific, mathematical and communication foundations that underpin every engineering and management programme.',
+    aboutDescription:
+      'Through physics, chemistry, mathematics and humanities, the department strengthens the fundamentals and soft skills essential for professional success.',
+    points: [
+      'Applied physics and chemistry',
+      'Engineering mathematics',
+      'Communication and soft skills',
+      'Humanities and human-centred thinking',
+    ],
+    vision:
+      'To build strong scientific and human foundations for every graduate.',
+    focusAreas: [
+      { title: 'Applied Physics & Chemistry', description: 'Fundamental sciences for engineering.' },
+      { title: 'Mathematics', description: 'Engineering mathematics and analytical methods.' },
+      { title: 'Communication & Humanities', description: 'Language, ethics and human values.' },
+    ],
+    labs: [
+      { title: 'Physics Lab', description: 'Experiments in applied and engineering physics.' },
+      { title: 'Chemistry Lab', description: 'Practical work in engineering chemistry.' },
+      { title: 'Language & Communication Lab', description: 'Space for communication skills training.' },
+    ],
+    programs: ['Foundational courses across all B.Tech programmes'],
+  }),
 }
 
 // Maps each department slug to the icon key used by the Academics page's
@@ -408,21 +774,34 @@ export const departments = {
 const iconKeyBySlug = {
   cse: 'cse',
   'cse-ai-ml': 'ai-ml',
+  'cse-ai-data-science': 'ai-data-science',
   'cse-data-science': 'data-science',
   'cse-ai': 'artificial-intelligence',
   'cse-cyber-security': 'cyber-security',
+  'cse-iot': 'iot',
+  'cse-iot-cs-blockchain': 'iot-cyber-blockchain',
   it: 'information-technology',
   ece: 'electronics-communications',
   ee: 'electrical',
+  eee: 'electrical-electronics',
   mechanical: 'mechanical-engineering',
   biotechnology: 'biotechnology',
+  mba: 'mba',
+  bba: 'bba',
+  mca: 'mca',
+  bca: 'bca',
+  law: 'law',
+  bhm: 'bhm',
+  bsh: 'bsh',
 }
 
-// Convenience list for the Academics listing page (slug, title, summary, icon).
+// Convenience list for the Academics listing page (slug, title, summary, icon,
+// section). Order follows the declaration order in `departments` above.
 export const academicDepartments = Object.values(departments).map((d) => ({
   slug: d.slug,
   title: d.title,
   summary: d.tagline,
+  section: d.section,
   iconKey: iconKeyBySlug[d.slug],
 }))
 

@@ -6,7 +6,7 @@ import { ChevronRight } from 'lucide-react'
 export default function MegaMenu({ mega, label }) {
   return (
     <div
-      className={`absolute top-full z-50 ${mega.wide ? 'w-[760px]' : 'w-[640px]'} pt-3 transition-all duration-200 ease-out ${
+      className={`absolute top-full z-50 ${mega.wide ? 'w-[840px]' : 'w-[640px]'} pt-3 transition-all duration-200 ease-out ${
         mega.force
           ? 'visible translate-y-0 opacity-100'
           : 'invisible translate-y-1 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100'
@@ -18,7 +18,7 @@ export default function MegaMenu({ mega, label }) {
 
         <div className="flex min-h-[214px] items-stretch gap-5 p-5">
           {/* Link columns */}
-          <div className="flex flex-1 gap-6">
+          <div className="flex min-w-0 flex-1 gap-6">
             {mega.columns.map((col) => (
               <div key={col.title} className="min-w-0 flex-1">
                 <div className="mb-2 flex items-center gap-2">

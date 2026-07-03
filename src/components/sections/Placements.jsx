@@ -142,7 +142,7 @@ export default function Placements() {
                   <img
                     src={r.src}
                     alt={r.name}
-                    className="max-h-9 max-w-[120px] object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                    className="max-h-9 max-w-[120px] object-contain opacity-70  transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                   />
                 </div>
               ))}

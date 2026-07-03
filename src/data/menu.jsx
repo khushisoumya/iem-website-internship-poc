@@ -1,6 +1,6 @@
 import {
   Info, UserCog, Building2, Cpu, BookOpen, FileText, ScrollText,
-  Dumbbell, Camera, Trophy, Award, Handshake, FlaskConical,
+  Dumbbell, Camera, Trophy, Award, Handshake, FlaskConical, Briefcase,
 } from 'lucide-react'
 import { IMAGES } from './images'
 
@@ -75,41 +75,45 @@ export const menu = [
       image: IMAGES.programEngineering,
       columns: [
         {
-          title: 'Departments',
+          title: 'Engineering',
           Icon: Cpu,
           links: [
             { label: 'Computer Sc. & Engg.', href: '#/academics/cse' },
             { label: 'CSE — AI & ML', href: '#/academics/cse-ai-ml' },
+            { label: 'CSE — AI & Data Sc.', href: '#/academics/cse-ai-data-science' },
             { label: 'CSE — Data Science', href: '#/academics/cse-data-science' },
+            { label: 'CSE — Cyber Security', href: '#/academics/cse-cyber-security' },
+            { label: 'CSE — Internet of Things', href: '#/academics/cse-iot' },
             { label: 'Information Technology', href: '#/academics/it' },
             { label: 'Electronics & Comm.', href: '#/academics/ece' },
             { label: 'Electrical Engineering', href: '#/academics/ee' },
             { label: 'Mechanical Engineering', href: '#/academics/mechanical' },
             { label: 'Biotechnology', href: '#/academics/biotechnology' },
-            { label: 'BBA', href: '#programs' },
-            { label: 'MBA', href: '#programs' },
-            { label: 'BCA', href: '#programs' },
-            { label: 'MCA', href: '#programs' },
+            { label: 'View All Departments →', href: '#/academics' },
           ],
         },
         {
-          title: 'Programs & Resources',
+          title: 'Management & Applications',
+          Icon: Briefcase,
+          links: [
+            { label: 'MBA', href: '#/academics/mba' },
+            { label: 'BBA', href: '#/academics/bba' },
+            { label: 'MCA', href: '#/academics/mca' },
+            { label: 'BCA', href: '#/academics/bca' },
+            { label: 'Law', href: '#/academics/law' },
+            { label: 'Hotel Mgmt (BHM)', href: '#/academics/bhm' },
+            { label: 'Basic Sc. & Humanities (BSH)', href: '#/academics/bsh' },
+          ],
+        },
+        {
+          title: 'Resources',
           Icon: BookOpen,
           links: [
-            { label: 'Law · BHM · BSH', href: '#programs' },
             { label: 'Scholarships', href: '#' },
             { label: 'Library', href: '#' },
             { label: 'Academic Calendar', href: '#' },
             { label: 'IEM LMS', href: 'https://courses.iemverse.ai/', external: true },
             { label: 'IEMA Tutor', href: 'https://www.iema.ai/', external: true },
-          ],
-        },
-        {
-          title: 'Collaboration',
-          Icon: Handshake,
-          links: [
-            { label: 'Foreign Tie-Ups', href: '#' },
-            { label: "MOU's", href: '#' },
           ],
         },
       ],

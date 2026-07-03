@@ -65,7 +65,7 @@ https://iem-saltlake.vercel.app/
 | Frontend | React.js |
 | Styling | Tailwind CSS |
 | Routing | React Router |
-| Animations | Framer Motion *(optional)* |
+| Animations | Framer Motion |
 | Icons | Lucide React |
 | Build Tool | Vite |
 | Deployment | Vercel |

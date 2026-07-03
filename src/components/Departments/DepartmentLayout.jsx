@@ -36,78 +36,45 @@ export default function DepartmentLayout({
 }) {
   return (
     <div>
-<<<<<<< HEAD
-      {/* Hero — matches the shared PageHeader image treatment & sizing */}
-      <section className="relative overflow-hidden bg-brand-navy text-white">
-=======
-      {/* Hero */}
-      {/* <section className="relative bg-[#0a1c4e] text-white overflow-hidden h-[500px]">
->>>>>>> 869ce6084a05d8baf1d39adad4620f24369f8522
-
+      <section className="relative bg-[#0a1c4e] text-white overflow-hidden min-h-[500px] py-14 lg:py-0 lg:h-[500px]">
         <img
           src={heroImage}
           alt={title}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-25 lg:opacity-100 lg:left-auto lg:right-0 lg:w-1/2"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-brand-navy/40"></div>
+        <div className="absolute inset-0 bg-[#0a1c4e]/90 lg:bg-gradient-to-r lg:from-[#0a1c4e] lg:via-[#0a1c4e]/60 lg:to-transparent" />
 
-        <div className="container-x relative z-10 flex min-h-[240px] flex-col justify-center py-16 sm:min-h-[300px] sm:py-20">
-
-          <p className="text-sm text-gray-300 mb-6">
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5 h-full flex flex-col justify-center py-8 lg:py-0">
+          <p className="text-sm text-gray-300 mb-4 lg:mb-6">
             Home &gt; Academics &gt; Departments &amp; Programmes &gt; {title}
           </p>
 
-          <h1 className="text-4xl font-extrabold mb-5 text-white sm:text-5xl lg:text-6xl">{heroTitle}</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-5 text-white">
+            {heroTitle}
+          </h1>
 
-          <p className="text-xl text-gray-200 mb-5">
+          <p className="text-base sm:text-xl text-gray-200 mb-4 lg:mb-5">
             {tagline}
           </p>
 
-          <div className="w-16 h-1 bg-yellow-400 mb-6"></div>
+          <div className="w-16 h-1 bg-yellow-400 mb-5 lg:mb-6" />
 
-          <p className="max-w-xl leading-relaxed text-gray-200 mb-8">{heroSummary}</p>
+          <p className="max-w-xl leading-7 sm:leading-8 text-gray-200 mb-6 lg:mb-8 text-sm sm:text-base">
+            {heroSummary}
+          </p>
 
-          <div className="flex gap-4">
-            <button className="bg-blue-600 hover:bg-blue-700 px-7 py-3 rounded-lg font-medium">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-16 lg:mb-20">
+            <button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 px-6 sm:px-7 py-3 rounded-lg font-medium">
               Apply Now
             </button>
 
-            <button className="border border-white px-7 py-3 rounded-lg hover:bg-white hover:text-[#0a1c4e] transition">
+            <button className="w-full sm:w-auto border border-white px-6 sm:px-7 py-3 rounded-lg hover:bg-white hover:text-[#0a1c4e] transition">
               Download Brochure
             </button>
           </div>
-
         </div>
       </section>
- */}
-
- <section className="relative bg-[#0a1c4e] text-white overflow-hidden min-h-[500px] py-14 lg:py-0 lg:h-[500px]">
-  <img
-    src={heroImage}
-    alt={title}
-    className="absolute inset-0 h-full w-full object-cover opacity-25 lg:opacity-100 lg:left-auto lg:right-0 lg:w-1/2"
-  />
-  <div className="absolute inset-0 bg-[#0a1c4e]/90 lg:bg-gradient-to-r lg:from-[#0a1c4e] lg:via-[#0a1c4e]/60 lg:to-transparent" />
-
-  <div className="relative z-10 max-w-[1200px] mx-auto px-5 h-full flex flex-col justify-center py-8 lg:py-0">
-    <p className="text-sm text-gray-300 mb-4 lg:mb-6">Home &gt; Academics &gt; Departments &amp; Programmes &gt; {title}</p>
-    {/* <p className="text-lg sm:text-xl font-semibold text-white/90 mb-2 sm:mb-3">{heroLabel}</p> */}
-    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-5 text-white">{heroTitle}</h1>
-    <p className="text-base sm:text-xl text-gray-200 mb-4 lg:mb-5">{tagline}</p>
-    <div className="w-16 h-1 bg-yellow-400 mb-5 lg:mb-6" />
-    <p className="max-w-xl leading-7 sm:leading-8 text-gray-200 mb-6 lg:mb-8 text-sm sm:text-base">{heroSummary}</p>
-
-    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-16 lg:mb-20">
-  <button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 px-6 sm:px-7 py-3 rounded-lg font-medium">
-    Apply Now
-  </button>
-  <button className="w-full sm:w-auto border border-white px-6 sm:px-7 py-3 rounded-lg hover:bg-white hover:text-[#0a1c4e] transition">
-    Download Brochure
-  </button>
-</div>
-  </div>
-</section>
 
 
       {/* stats */}

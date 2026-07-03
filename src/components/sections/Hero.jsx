@@ -187,7 +187,7 @@ export default function Hero() {
         >
           <div className="max-w-2xl">
             <span className="inline-flex animate-fade-up items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-md">
-              <Sparkles size={14} className="text-brand-gold" />
+             
               Admissions Open · Session 2026
             </span>
 
@@ -253,7 +253,7 @@ export default function Hero() {
             {/* Accreditation & ranking strip — a clean credential row separated
                 by hairline dividers rather than bordered cards */}
             <div className="mt-11 animate-fade-up [animation-delay:320ms]">
-              <span className="text-[10.5px] font-semibold uppercase tracking-[0.24em] text-white/45">
+              <span className="text-[10.5px] font-semibold uppercase tracking-[0.24em] text-brand-gold">
                 Accredited &amp; Ranked By
               </span>
               <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-5">
@@ -273,7 +273,7 @@ export default function Hero() {
                     </span>
                     <span className="flex flex-col leading-tight">
                       <span className="text-[14px] font-bold tracking-wide text-white">{a.name}</span>
-                      <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-brand-gold">
+                      <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-white/40">
                         {a.stat}
                       </span>
                     </span>

@@ -22,6 +22,7 @@ import {
   Zap,
 } from 'lucide-react'
 import buildingImg from '../../assets/images/building2.png'
+import PageHeader from '../common/PageHeader'
 import { academicDepartments, departmentImages, sectionOrder } from '../../data/departments'
 
 const stats = [
@@ -127,28 +128,11 @@ export default function Academics() {
 
   return (
     <div className="bg-[#f7f9ff]">
-      <section className="relative overflow-hidden bg-[#0a2c75] text-white">
-        <div className="absolute inset-0">
-          <img src={buildingImg} alt="Engineering block" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,34,92,0.96)_0%,rgba(8,34,92,0.92)_42%,rgba(8,34,92,0.40)_72%,rgba(8,34,92,0.08)_100%)]" />
-        </div>
-
-        <div className="container-x relative z-10 py-16 sm:py-20 lg:py-24">
-          <p className="text-sm text-white/75">Home &gt; Academics</p>
-
-          <div className="mt-8 max-w-2xl">
-            <p className="text-xl font-semibold text-white/90 sm:text-2xl">Explore</p>
-            <h1 className="mt-2 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-[56px]">
-              Departments &amp; Programmes
-            </h1>
-            <div className="mt-6 h-1 w-12 rounded-full bg-brand-gold" />
-            <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/82 sm:text-base">
-              Discover our full academic portfolio across computing, engineering, management,
-              law, hospitality and foundational sciences.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Departments & Programmes"
+        crumb="Academics"
+        subtitle="Discover our full academic portfolio across computing, engineering, management, law, hospitality and foundational sciences."
+      />
 
       <section className="container-x relative z-20 -mt-8 sm:-mt-10">
         <div className="grid gap-px overflow-hidden rounded-[22px] bg-slate-200 shadow-[0_22px_60px_rgba(15,23,42,0.12)] md:grid-cols-5">

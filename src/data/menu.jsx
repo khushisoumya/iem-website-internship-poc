@@ -133,6 +133,7 @@ export const menu = [
           links: [
             { label: 'Admission Process', href: '#/admission-process' },
             { label: 'IEMJEE 2026', href: '#admissions' },
+            { label: 'MBA 2026', href: 'https://mba.iem.edu.in/', external: true, highlight: true },
             { label: 'Eligibility Criteria', href: '#/eligibility-criteria' },
           ],
         },

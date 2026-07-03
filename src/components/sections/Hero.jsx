@@ -9,10 +9,16 @@ import {
   ChevronDown,
 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import VideoModal from '../common/VideoModal'
 import heroImage from '../../assets/images/hero-img.png'
 import nirfLogo from '../../assets/images/nirf.png'
 import aicteLogo from '../../assets/images/aicte.png'
 import nbaLogo from '../../assets/images/nba.png'
+
+// Campus-tour video shown in the pop-out player. Swap this one YouTube ID for
+// a different campus-tour video and nothing else needs to change.
+// (https://youtu.be/udkQ5gD7m6s)
+const CAMPUS_TOUR_VIDEO_ID = 'udkQ5gD7m6s'
 
 // Minimalist accreditation / ranking badges shown in the hero. Logos sit in
 // clean frosted pills with a one-line stat so they read as credentials, not
@@ -115,6 +121,7 @@ function HeroVideo({ src }) {
 export default function Hero() {
   // Scroll offset drives the parallax layers.
   const [offset, setOffset] = useState(0)
+  const [tourOpen, setTourOpen] = useState(false)
   const rafRef = useRef(0)
 
   useEffect(() => {
@@ -226,8 +233,10 @@ export default function Hero() {
                 />
               </a>
 
-              <a
-                href="#about"
+              <button
+                type="button"
+                onClick={() => setTourOpen(true)}
+                aria-label="Play campus tour video"
                 className="
                   group relative inline-flex h-[52px] items-center overflow-hidden
                   rounded-xl border border-white/20 bg-white/10 px-6 text-white
@@ -247,7 +256,7 @@ export default function Hero() {
                     Play Tour
                   </span>
                 </span>
-              </a>
+              </button>
             </div>
 
             {/* Accreditation & ranking strip — a clean credential row separated
@@ -309,6 +318,14 @@ export default function Hero() {
           ))}
         </div>
       </div>
+
+      {/* Campus-tour pop-out player — plays over the page, mutes site audio */}
+      <VideoModal
+        open={tourOpen}
+        videoId={CAMPUS_TOUR_VIDEO_ID}
+        title="IEM Campus Tour"
+        onClose={() => setTourOpen(false)}
+      />
     </section>
   )
 }

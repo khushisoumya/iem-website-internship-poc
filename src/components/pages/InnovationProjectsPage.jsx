@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { ArrowUpRight, Calendar, ChevronRight, Lightbulb, Search, X } from 'lucide-react'
-import buildingImg from '../../assets/images/building2.png'
+import PageHeader from '../common/PageHeader'
 
 // LOCAL-FIRST imagery. Files named `innovation1.png`, `innovation2.jpg`, … in
 // src/assets/images/ are matched to each project by its `image` key
@@ -235,33 +235,11 @@ export default function InnovationProjectsPage() {
 
   return (
     <div className="bg-[#f7f9ff]">
-      {/* Page hero */}
-      <section className="relative overflow-hidden bg-[#0a2c75] text-white">
-        <div className="absolute inset-0">
-          <img src={buildingImg} alt="IEM campus" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,34,92,0.96)_0%,rgba(8,34,92,0.92)_42%,rgba(8,34,92,0.40)_72%,rgba(8,34,92,0.08)_100%)]" />
-        </div>
-
-        <div className="container-x relative z-10 py-16 sm:py-20 lg:py-24">
-          <p className="text-sm text-white/75">Home &gt; Research &gt; Innovation</p>
-
-          <div className="mt-8 max-w-2xl">
-            <p className="inline-flex items-center gap-2 text-xl font-semibold text-white/90 sm:text-2xl">
-              <Lightbulb size={22} className="text-brand-gold" />
-              Explore
-            </p>
-            <h1 className="mt-2 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-[56px]">
-              Innovation &amp; IEDC Projects
-            </h1>
-            <div className="mt-6 h-1 w-12 rounded-full bg-brand-gold" />
-            <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/82 sm:text-base">
-              A showcase of student-led innovation from the Innovation &amp;
-              Entrepreneurship Development Cell — from robotics and renewable
-              energy to assistive technology and sustainable design.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Innovation Projects"
+        crumb="Research › Innovation"
+        subtitle="A showcase of student-led innovation from the Innovation & Entrepreneurship Development Cell — from robotics and renewable energy to assistive technology and sustainable design."
+      />
 
       {/* Projects */}
       <section className="container-x pb-16 pt-14 sm:pt-16">

@@ -1,5 +1,5 @@
 //myedit
-import buildingImg from '../../assets/images/building2.png';
+import PageHeader from '../common/PageHeader';
 import photo1 from '../../assets/images/pocp1.png';
 import photo2 from '../../assets/images/pocp2.png';
 import photo3 from '../../assets/images/pocp3.png';
@@ -32,26 +32,11 @@ const leadership = [
 function About() {
   return (
     <div>
-      <div className="relative bg-[#0a1c4e] text-white overflow-hidden">
-        <img
-          src={buildingImg}
-          alt="IEM Building"
-          className="absolute top-0 right-0 h-full w-1/2 object-cover"
-        />
-        <div className="absolute top-0 right-0 h-full w-1/2 bg-gradient-to-r from-[#0a1c4e] via-[#0a1c4e]/60 to-transparent"></div>
-
-        <div className="max-w-[1200px] mx-auto px-5 py-12 relative z-10">
-          <p className="text-sm text-gray-300 mb-8">Home &gt; About IEM</p>
-          <p className="text-xl font-semibold text-white/90 mb-3">Institute of Engineering &amp; Management</p>
-          <h1 className="text-5xl font-extrabold mb-4 text-white">About IEM</h1>
-          <div className="w-16 h-1 bg-yellow-400 mb-4"></div>
-          <p className="max-w-xl text-gray-200 text-sm leading-7">
-            Since 1989, IEM has built a reputation for academic excellence, industry-oriented
-            learning, research depth and outstanding student outcomes across engineering,
-            management and applied sciences.
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        title="About IEM"
+        crumb="About IEM"
+        subtitle="Since 1989, IEM has built a reputation for academic excellence, industry-oriented learning, research depth and outstanding student outcomes across engineering, management and applied sciences."
+      />
       <div className="max-w-[1200px] mx-auto px-5 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
   <div className="text-gray-700 text-[18px] leading-relaxed space-y-4">
     <p>

@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronRight, ChevronLeft, Quote } from 'lucide-react'
 import Reveal from '../common/Reveal'
-import { IMAGES } from '../../data/images'
+import PageHeader from '../common/PageHeader'
+import { portrait } from '../../data/people'
 
 /* ────────────────────────────────────────────────────────────────────────
    Data
@@ -74,37 +75,35 @@ const DEPARTMENTS = [
 const BAR_MAX = 400
 const BAR_TICKS = [0, 100, 200, 300, 400]
 
-const avatar = (id) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=200&h=200&q=80`
-
 const OPINIONS = [
   {
     name: 'Sumeet Chakraborty',
     role: 'Associate Consultant, Infosys Leadership Institute',
-    img: avatar('photo-1519085360753-af0119f7cbe7'),
+    img: portrait('person-m4'),
     quote: 'Your college truly is a model college for others not just across the state, but across the country as well.',
   },
   {
     name: 'Ashok Mukherjee',
     role: 'Chief Manager HR, Tata Consultancy Services',
-    img: avatar('photo-1500648767791-00dcc994a43e'),
+    img: portrait('person-m1'),
     quote: 'TCS has been proud to recruit from your Institute since its inception. These students consistently excel in our mainstream projects, and we look forward to returning for our future staffing needs.',
   },
   {
     name: 'Moumita Bhattacharya',
     role: 'Executive Resourcing, Wipro',
-    img: avatar('photo-1494790108377-be9c29b29330'),
+    img: portrait('person-f4'),
     quote: 'Yours is one of the best Institutes in terms of the quality of students that we have seen so far.',
   },
   {
     name: 'Rajarshi Sen',
     role: 'Senior Manager, Cognizant',
-    img: avatar('photo-1507003211169-0a1dd7228f2d'),
+    img: portrait('person-m2'),
     quote: 'The students from IEM come with strong fundamentals and a great attitude. They ramp up quickly and add value to our teams from very early on.',
   },
   {
     name: 'Debolina Ghosh',
     role: 'Talent Acquisition Lead, Capgemini',
-    img: avatar('photo-1438761681033-6461ffad8d80'),
+    img: portrait('person-f5'),
     quote: 'IEM has been a consistent partner in our campus hiring. The quality and readiness of the talent pool keeps us coming back year after year.',
   },
 ]
@@ -402,8 +401,8 @@ function OpinionCarousel() {
                       alt={t.name}
                       loading="lazy"
                       onError={(e) => {
-                        if (e.currentTarget.src !== IMAGES.testimonial) {
-                          e.currentTarget.src = IMAGES.testimonial
+                        if (e.currentTarget.src !== portrait('person-m1')) {
+                          e.currentTarget.src = portrait('person-m1')
                         }
                       }}
                       className="h-20 w-20 rounded-full object-cover ring-4 ring-brand-navy"
@@ -481,30 +480,11 @@ export default function PlacementOverviewPage() {
 
   return (
     <>
-      {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-brand-navy">
-        <img
-          src={IMAGES.heroCampus}
-          alt="IEM Campus"
-          className="absolute inset-y-0 right-0 h-full w-2/3 object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/95 to-brand-navy/30" />
-        <div className="container-x relative py-14 sm:py-20">
-          <nav className="flex items-center gap-1.5 text-[12.5px] text-white/70">
-            <a href="#top" className="transition-colors hover:text-white">Home</a>
-            <ChevronRight size={13} />
-            <span className="text-white">Placement Overview</span>
-          </nav>
-          <h1 className="mt-4 font-display text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-            Placement Overview
-          </h1>
-          <p className="mt-3 max-w-lg text-[14px] leading-relaxed text-white/80">
-            Year after year our students are placed with the world&rsquo;s leading recruiters. Explore
-            our placement records, examination outcomes and what the industry says about IEM.
-          </p>
-          <span className="mt-4 block h-1 w-20 rounded-full bg-brand-gold" />
-        </div>
-      </section>
+      <PageHeader
+        title="Placement Overview"
+        crumb="Placement Overview"
+        subtitle="Year after year our students are placed with the world’s leading recruiters. Explore our placement records, examination outcomes and what the industry says about IEM."
+      />
 
       {/* ── Placement Records ───────────────────────────────────── */}
       <section className="bg-white py-14 lg:py-20">

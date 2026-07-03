@@ -36,24 +36,24 @@ export default function DepartmentLayout({
 }) {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative bg-[#0a1c4e] text-white overflow-hidden h-[500px]">
+      {/* Hero — matches the shared PageHeader image treatment & sizing */}
+      <section className="relative overflow-hidden bg-brand-navy text-white">
 
         <img
           src={heroImage}
           alt={title}
-          className="absolute right-0 top-0 h-full w-1/2 object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-r from-[#0a1c4e] via-[#0a1c4e]/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-brand-navy/40"></div>
 
-        <div className="relative z-10 max-w-[1200px] mx-auto px-5 h-full flex flex-col justify-center">
+        <div className="container-x relative z-10 flex min-h-[240px] flex-col justify-center py-16 sm:min-h-[300px] sm:py-20">
 
           <p className="text-sm text-gray-300 mb-6">
             Home &gt; Academics &gt; Departments &amp; Programmes &gt; {title}
           </p>
 
-          <h1 className="text-5xl font-bold mb-5 text-white">{heroTitle}</h1>
+          <h1 className="text-4xl font-extrabold mb-5 text-white sm:text-5xl lg:text-6xl">{heroTitle}</h1>
 
           <p className="text-xl text-gray-200 mb-5">
             {tagline}
@@ -61,7 +61,7 @@ export default function DepartmentLayout({
 
           <div className="w-16 h-1 bg-yellow-400 mb-6"></div>
 
-          <p className="max-w-xl leading-80 text-gray-200 mb-8">{heroSummary}</p>
+          <p className="max-w-xl leading-relaxed text-gray-200 mb-8">{heroSummary}</p>
 
           <div className="flex gap-4">
             <button className="bg-blue-600 hover:bg-blue-700 px-7 py-3 rounded-lg font-medium">

@@ -19,6 +19,8 @@ import abpLogo from '../../assets/images/abp.png'
 import starNewsLogo from '../../assets/images/star-news.png'
 import nbaLogo from '../../assets/images/nba.png'
 import aicteLogo from '../../assets/images/aicte.png'
+import zeeLogo from '../../assets/images/zee.png'
+import ugcLogo from '../../assets/images/ugc.png'
 
 // NIRF ranking reports (src/assets/pdf) — each card links to its download.
 import overallReport from '../../assets/pdf/overall.pdf'
@@ -50,11 +52,11 @@ const recognizedBy = [
   { src: nirfLogo, name: 'NIRF' },
   { src: nbaLogo, name: 'NBA' },
   { src: aicteLogo, name: 'AICTE' },
-  { src: aicteLogo, name: 'AICTE' },
+  { src: ugcLogo, name: 'UGC' },
   { src: telegraphLogo, name: 'The Telegraph' },
   { src: abpLogo, name: 'ABP Group' },
   { src: starNewsLogo, name: 'Star News Award' },
-  { src: telegraphLogo, name: 'The Telegraph' },
+   { src: zeeLogo, name: 'Zee News' },
   
   
   

@@ -39,7 +39,11 @@ export default function MegaMenu({ mega, label }) {
                         {...(link.external
                           ? { target: '_blank', rel: 'noopener noreferrer' }
                           : {})}
-                        className="group/link flex items-center justify-between gap-2 rounded-md px-2.5 py-[7px] text-[13px] font-medium text-ink-600 transition-colors hover:bg-surface-soft hover:text-brand-blue"
+                        className={
+                          link.highlight
+                            ? 'group/link flex items-center justify-between gap-2 rounded-md border border-brand-gold/40 bg-brand-gold/10 px-2.5 py-[7px] text-[13px] font-semibold text-brand-bluedark transition-colors hover:bg-brand-gold/20'
+                            : 'group/link flex items-center justify-between gap-2 rounded-md px-2.5 py-[7px] text-[13px] font-medium text-ink-600 transition-colors hover:bg-surface-soft hover:text-brand-blue'
+                        }
                       >
                         <span className="whitespace-nowrap">{link.label}</span>
                         <ChevronRight

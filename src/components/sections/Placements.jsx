@@ -6,6 +6,7 @@ import {
 import SectionHeader from '../common/SectionHeader'
 import Reveal from '../common/Reveal'
 import CountUp from '../common/CountUp'
+import { portrait } from '../../data/people'
 
 // Recruiter logos. Drop the real PNGs into src/assets/images/ using these
 // exact filenames and they will appear automatically.
@@ -43,32 +44,30 @@ const highlights = [
   { Icon: Trophy, title: 'Excellent Track Record', desc: 'Consistent placement growth and top recruiters year on year.' },
 ]
 
-const avatar = (id) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=200&h=200&q=80`
-
 const testimonials = [
   {
     quote: 'IEM gave me not just a world-class education, but the confidence and skills to crack top tech interviews. The placement cell supported me at every step.',
-    name: 'Ankit Verma', role: 'B.Tech CSE · Placed at Google', img: avatar('photo-1507003211169-0a1dd7228f2d'), company: 'Google',
+    name: 'Ankit Verma', role: 'B.Tech CSE · Placed at Google', img: portrait('person-m1'), company: 'Google',
   },
   {
     quote: 'The mentorship and mock interviews were game-changers. I walked into my final round feeling completely prepared and landed my dream consulting role.',
-    name: 'Priya Sharma', role: 'MBA · Placed at Deloitte', img: avatar('photo-1494790108377-be9c29b29330'), company: 'Deloitte',
+    name: 'Priya Sharma', role: 'MBA · Placed at Deloitte', img: portrait('person-f1'), company: 'Deloitte',
   },
   {
     quote: 'From day one the training cell pushed us to build real projects. That hands-on experience is exactly what set my profile apart with recruiters.',
-    name: 'Rahul Das', role: 'B.Tech IT · Placed at Microsoft', img: avatar('photo-1500648767791-00dcc994a43e'), company: 'Microsoft',
+    name: 'Rahul Das', role: 'B.Tech IT · Placed at Microsoft', img: portrait('person-m2'), company: 'Microsoft',
   },
   {
     quote: 'The coding bootcamps and aptitude sessions made all the difference. I cleared multiple offers and chose the one I was most excited about.',
-    name: 'Sneha Gupta', role: 'MCA · Placed at Amazon', img: avatar('photo-1438761681033-6461ffad8d80'), company: 'Amazon',
+    name: 'Sneha Gupta', role: 'MCA · Placed at Amazon', img: portrait('person-f2'), company: 'Amazon',
   },
   {
     quote: 'Beyond academics, IEM built my communication and leadership. The placement drive felt smooth because the faculty had prepared us for everything.',
-    name: 'Arjun Mehta', role: 'B.Tech ECE · Placed at TCS', img: avatar('photo-1519085360753-af0119f7cbe7'), company: 'TCS',
+    name: 'Arjun Mehta', role: 'B.Tech ECE · Placed at TCS', img: portrait('person-m3'), company: 'TCS',
   },
   {
     quote: 'The exposure to live industry projects and the supportive alumni network gave me a real head start in my marketing career.',
-    name: 'Ananya Roy', role: 'BBA · Placed at Accenture', img: avatar('photo-1544005313-94ddf0286df2'), company: 'Accenture',
+    name: 'Ananya Roy', role: 'BBA · Placed at Accenture', img: portrait('person-f3'), company: 'Accenture',
   },
 ]
 

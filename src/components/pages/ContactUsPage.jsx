@@ -1,5 +1,4 @@
 import {
-  ChevronRight,
   MapPin,
   Phone,
   Printer,
@@ -9,6 +8,8 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import Reveal from '../common/Reveal'
+import PageHeader from '../common/PageHeader'
+import ContactForm from './ContactForm'
 import { IMAGES } from '../../data/images'
 import buildingImg from '../../assets/images/building2.png'
 
@@ -203,39 +204,49 @@ function FormCard({ form }) {
 export default function ContactUsPage() {
   return (
     <>
-      {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-brand-navy">
-        <img
-          src={IMAGES.heroCampus}
-          alt="IEM Campus"
-          className="absolute inset-y-0 right-0 h-full w-1/2 object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 to-brand-navy/20" />
-        {/* soft ambient orbs */}
-        <span className="pointer-events-none absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-brand-blue/20 blur-3xl" />
+      <PageHeader
+        title="Contact Us"
+        crumb="Contact Us"
+        subtitle="IEM is a place where innovation meets education. Reach out to any of our campuses and offices — we are committed to nurturing talent, fostering research, and shaping the leaders of tomorrow."
+      />
 
-        <div className="container-x relative py-14 sm:py-20">
-          <nav className="flex items-center gap-1.5 text-[12.5px] text-white/70">
-            <a href="#top" className="transition-colors hover:text-white">
-              Home
-            </a>
-            <ChevronRight size={13} />
-            <span className="text-white">Contact Us</span>
-          </nav>
-          <h1 className="mt-4 animate-fade-up font-display text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-            Contact Us
-          </h1>
-          <span className="mt-4 block h-1 w-20 rounded-full bg-brand-gold" />
-          <p className="mt-5 max-w-xl animate-fade-up text-[14px] leading-relaxed text-white/80 [animation-delay:120ms]">
-            IEM is a place where innovation meets education. Reach out to any of our campuses and
-            offices — we are committed to nurturing talent, fostering research, and shaping the
-            leaders of tomorrow.
-          </p>
+      {/* ── Enquiry / contact form — placed first ───────────────── */}
+      <section className="bg-white py-14 lg:py-20">
+        <div className="container-x">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <span className="section-eyebrow">Enquire Now</span>
+            <h2 className="font-display text-3xl font-extrabold text-ink-900 sm:text-4xl">
+              Have a Question? Write to Us
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-ink-500">
+              Send us your enquiry and our team will get back to you promptly via email or phone.
+            </p>
+          </div>
+          <Reveal y={30}>
+            <div className="mx-auto max-w-4xl">
+              <ContactForm />
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ── Offices directory ───────────────────────────────────── */}
       <section className="bg-surface-muted py-14 lg:py-20">
+        
+      
+        <div className="container-x">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <span className="section-eyebrow">Our Offices</span>
+            <h2 className="font-display text-3xl font-extrabold text-ink-900 sm:text-4xl">
+             We're Here to Help
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-ink-500">
+              Reach out to our admissions, administration, and campus offices across IEM, Our team is here to assist you.
+            </p>
+          </div>
+         
+        </div>
+      
         <div className="container-x">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {OFFICES.map((office, i) => (

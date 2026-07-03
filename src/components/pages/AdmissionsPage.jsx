@@ -1,9 +1,9 @@
 import {
   ClipboardList, Phone, Info, ListChecks, Users, IndianRupee, Landmark,
-  Headphones, ArrowRight, ShieldAlert, ChevronRight,
+  Headphones, ArrowRight, ShieldAlert,
 } from 'lucide-react'
 import Reveal from '../common/Reveal'
-import { IMAGES } from '../../data/images'
+import PageHeader from '../common/PageHeader'
 
 const fee945 = ['1st Sem: Rs.140,000/-', '2nd-8th Sem: Rs.115,000/- each']
 const booking =
@@ -47,29 +47,11 @@ function InfoCard({ Icon, title, children }) {
 export default function AdmissionsPage() {
   return (
     <>
-      {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-brand-navy">
-        <img
-          src={IMAGES.heroCampus}
-          alt="IEM Campus"
-          className="absolute inset-y-0 right-0 h-full w-2/3 object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/95 to-brand-navy/30" />
-        <div className="container-x relative py-12 sm:py-16">
-          <nav className="flex items-center gap-1.5 text-[12.5px] text-white/70">
-            <a href="#top" className="transition-colors hover:text-white">Home</a>
-            <ChevronRight size={13} />
-            <span className="text-white">Admission</span>
-          </nav>
-          <h1 className="mt-4 font-display text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
-            Admissions
-          </h1>
-          <p className="mt-2 max-w-md text-[14px] text-white/80">
-            Start your journey towards a successful future with IEM.
-          </p>
-          <span className="mt-4 block h-1 w-20 rounded-full bg-brand-gold" />
-        </div>
-      </section>
+      <PageHeader
+        title="Admissions"
+        crumb="Admission"
+        subtitle="Start your journey towards a successful future with IEM."
+      />
 
       <div className="bg-white py-12 lg:py-16">
         <div className="container-x space-y-6">

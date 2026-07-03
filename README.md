@@ -209,3 +209,41 @@ The website is fully responsive and optimized for:
 # Where Innovation Meets Excellence.
 
 ### Institute of Engineering & Management (IEM), Salt Lake, Kolkata
+
+
+---
+
+# 👩‍💻 My Contributions
+
+This repository is a **personal fork** of the original **IEM Website Redesign POC**, created for **portfolio and archival purposes** during my Software Developer Internship at **IEMA Research & Development Pvt. Ltd.**
+
+The original project was developed collaboratively. This fork preserves the project while highlighting my individual contributions.
+
+## 💻 Development
+
+- Developed the **About** page.
+- Developed the **Academics** page.
+- Implemented interactive department cards with hover effects and navigation to their respective department pages.
+- Built the individual department pages.
+- Made all department pages fully responsive across desktop, tablet, and mobile devices.
+
+## 🎨 UI / UX Design
+
+- Designed the **Admissions** page.
+- Designed the **Mega Dropdown Navigation**.
+- Designed the **Academics** page and reusable Department Page layout.
+- Created the initial Homepage design concept, including the section hierarchy and content placement.
+- Designed the **Campus Life** and **Campus Highlights** sections, including:
+  - Awards & Achievements
+  - Upcoming Events
+  - News Bulletin
+
+## 📄 Documentation
+
+Authored the **Software Design Document**, covering:
+
+- Design decisions
+- UX research
+- Design system
+- Frontend architecture
+- Project structure

@@ -7,6 +7,8 @@ This project reimagines the university's online presence with a premium user exp
 🌐 **Live Demo:**  
 https://iem-saltlake.vercel.app/
 
+
+> 📌 **Note:** This repository is a personal fork of the original **IEM Website Redesign POC**, created for portfolio and archival purposes. My individual contributions are documented at the end of this README.
 ---
 
 ## ✨ Features
